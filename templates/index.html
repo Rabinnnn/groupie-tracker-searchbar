@@ -13,10 +13,18 @@
 <div id="hero" class="hero-img">
     <div class="hero-text">
         <h1>GROUPIE TRACKER</h1>
+       
         <button class="discover-button" onclick="scrollToCards()">
             
             <span><i class="fa-solid fa-arrow-down"></i></span>
-        </button>        
+        </button>   
+                 
+    </div>
+    <div class="back-to-home">
+        <button class="back-to-home-button" onclick="backToHome()">
+            
+            <span><i class="fa-solid fa-arrow-left"></i> Back to home</span>
+        </button>  
     </div>
     <div class="search-container">
         <input type="search" name="query" class="search-input" id="search-input" placeholder="Search for artists..." value="{{.Query}}">

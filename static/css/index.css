@@ -74,6 +74,32 @@ html, body {
     );
 }
 
+.back-to-home-button {
+    background: linear-gradient(
+        to right, #5f9ef8, #8972e4, #f3659d
+    );
+    color: #fff; 
+    border: none;
+    padding: 10px 20px; 
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    border-radius: 5px;
+    margin-top: 20px; 
+    margin-left: 20px;
+    float:inline-start;
+    z-index: 1; 
+}
+.back-to-home-button:hover {
+    background: linear-gradient(
+        to right, #4c75af, #6f63a0, #9c4668
+    );
+}
+
+.back-to-home{
+    position: relative;
+    float: inline-start;
+}
 
 #artistCards {
     display: flex;
