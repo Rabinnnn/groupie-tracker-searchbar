@@ -79,6 +79,7 @@ html, body {
         to right, #5f9ef8, #8972e4, #f3659d
     );
     color: #fff; 
+    visibility: hidden;
     border: none;
     padding: 10px 20px; 
     font-size: 1em;

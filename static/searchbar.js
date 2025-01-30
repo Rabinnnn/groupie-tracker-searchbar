@@ -2,6 +2,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const searchInput = document.getElementById("search-input");
     const suggestionsList = document.getElementById("suggestions");
     const searchButton = document.getElementById("search-button");
+    const backToHomeButton = document.querySelector(".back-to-home-button");
+
     let cachedSuggestions = [];
     let currentFocus = -1;
   
@@ -74,7 +76,16 @@ document.addEventListener("DOMContentLoaded", () => {
     function performSearch(query) {
       window.location.href = `/?query=${encodeURIComponent(query)}`;
     }
-  
+    
+    const urlParams = new URLSearchParams(window.location.search);
+    const query = urlParams.get("query"); // Get search query from URL
+
+    // Make "Back to Home" button visible if search was performed
+    if (query && backToHomeButton) {
+        console.log("Search detected. Showing 'Back to Home' button.");
+        backToHomeButton.style.visibility = "visible"; // Show button after search
+    }
+
     function addActive(x) {
       if (!x) return false;
       removeActive(x);
@@ -108,7 +119,8 @@ document.addEventListener("DOMContentLoaded", () => {
       } else if (event.key === "ArrowUp") {
         currentFocus--;
         addActive(x);
-      } else if (event.key === "Enter") {
+      } else if (event.key === "Enter") {  
+      
         event.preventDefault();
         if (currentFocus > -1) {
           if (x) x[currentFocus].click();
@@ -120,7 +132,17 @@ document.addEventListener("DOMContentLoaded", () => {
   
     searchButton.addEventListener("click", function() {
       performSearch(searchInput.value.trim());
+      if (backToHomeButton) {
+        console.log("Back to Home button found. Making it visible.");
+        backToHomeButton.style.visibility = "visible"; // Ensure visibility
+      } else {
+          console.warn("Back to Home button not found in the document.");
+      }
     });
+
+
+
+  
   
     document.addEventListener("click", function(event) {
       if (!searchInput.contains(event.target) && !suggestionsList.contains(event.target)) {
