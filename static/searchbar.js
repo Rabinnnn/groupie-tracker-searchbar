@@ -140,13 +140,18 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-
-
-  
-  
     document.addEventListener("click", function(event) {
       if (!searchInput.contains(event.target) && !suggestionsList.contains(event.target)) {
         suggestionsList.innerHTML = "";
       }
     });
+
+    document.addEventListener("keydown", function (event) {
+      // Check if Ctrl (or Cmd on Mac) + / is pressed
+      if ((event.ctrlKey || event.metaKey) && event.key === "/") {
+          event.preventDefault(); // Prevent default behavior (e.g., opening browser search)
+          document.getElementById("search-input").focus();
+      }
+  });
+
   });
