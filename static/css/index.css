@@ -198,12 +198,14 @@ a {
 
 /* Search Container */
 .search-container {
-    position: absolute; /* Positioning within the parent */
+    position: relative; /* Positioning within the parent */
     top: 20px; /* Distance from the top */
-    right: 10px; /* Distance from the right */
     max-width: 400px;
     width: 100%;
-  }
+    align-items: center;
+    text-align: center;
+    margin: 0 auto; /* Centers the container horizontally */
+}
   
   .search-input {
     width: 100%;
