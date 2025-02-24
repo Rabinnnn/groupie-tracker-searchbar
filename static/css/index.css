@@ -264,8 +264,11 @@ a {
   }
   
   @media (max-width: 768px) {
+   
     .search-container {
-      max-width: 60%;
+        top: -40px; /* Distance from the top */
+        max-width: 60%;
+
     }
     
     .search-input {
@@ -275,6 +278,9 @@ a {
     
     .search-button {
       font-size: 18px;
+      position: relative;
+      top:-15px;
+      left:40%;
     }
   }
   
