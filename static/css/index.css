@@ -283,4 +283,16 @@ a {
       left:40%;
     }
   }
-  
+
+  .clear-button {
+    display: none; /* Hidden by default */
+    position: absolute;
+    right: 45px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: none;
+    font-size: 25px;
+    color: var(--primary-color);
+    cursor: pointer;
+  }

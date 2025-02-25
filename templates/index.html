@@ -28,6 +28,7 @@
     </div>
     <div class="search-container">
         <input type="search" name="query" class="search-input" id="search-input" placeholder="Search for artists..." value="{{.Query}}">
+        <button type="button" id="clear-button" class="clear-button">&times;</button>
         <button type="submit" class="search-button" id="search-button">
           <i class="fas fa-search"></i>
         </button>
@@ -57,6 +58,21 @@
     function backToHome(){
         window.location.href = "/"
     }
+
+    const searchInput = document.getElementById("search-input");
+const clearButton = document.getElementById("clear-button");
+
+// Show or hide clear button based on input
+searchInput.addEventListener("input", function () {
+  clearButton.style.display = this.value ? "block" : "none";
+});
+
+// Clear input when button is clicked
+clearButton.addEventListener("click", function () {
+  searchInput.value = "";
+  clearButton.style.display = "none";
+  searchInput.focus(); // Keep focus on input field
+});
 
 </script>
 <script src="/static/searchbar.js"></script>
